@@ -1,0 +1,25 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check tag matches VERSION
+        run: |
+          test "v$(cat VERSION)" = "${GITHUB_REF_NAME}" || { echo "Tag ${GITHUB_REF_NAME} does not match VERSION $(cat VERSION)"; exit 1; }
+      - name: Build skill zip
+        run: scripts/package.sh
+      - name: Create release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${GITHUB_REF_NAME}" dist/app-footings-*.zip \
+            --title "AppFootings ${GITHUB_REF_NAME}" --generate-notes
