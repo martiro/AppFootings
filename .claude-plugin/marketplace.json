@@ -1,0 +1,12 @@
+{
+  "name": "appfootings",
+  "description": "AppFootings: lay the foundations of your app before you build it.",
+  "owner": { "name": "Roberto Martini (martiro)" },
+  "plugins": [
+    {
+      "name": "app-footings",
+      "source": "./",
+      "description": "Guide the analysis of an app or digital product, from brief to aligned specs, clickable prototype and implementation prompts."
+    }
+  ]
+}

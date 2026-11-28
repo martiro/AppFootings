@@ -1,0 +1,7 @@
+{
+  "name": "app-footings",
+  "description": "Guide the analysis of an app or digital product, from brief to aligned specs, clickable prototype and implementation prompts.",
+  "author": { "name": "Roberto Martini (martiro)" },
+  "license": "MIT",
+  "skills": ["./app-footings"]
+}

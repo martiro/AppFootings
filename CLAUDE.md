@@ -15,6 +15,7 @@ This repository publishes **AppFootings**, a skill that guides the analysis of a
 | `docs/images/` | SVG + PNG output. **Never edit by hand** | — |
 | `scripts/package.sh` | Builds `dist/app-footings-<version>.zip` | — |
 | `scripts/install-local.sh` | Installs the skill into `~/.claude/skills/` for testing | — |
+| `.claude-plugin/marketplace.json`, `plugin.json` | Make the repo a plugin marketplace, so users install from GitHub. No `version` on purpose: installs track the latest commit | Plugin name, skill path |
 | `VERSION`, `CHANGELOG.md` | Versioning | — |
 | `.github/workflows/release.yml` | On a `v*` tag, builds the zip and attaches it to a GitHub release | — |
 
@@ -37,7 +38,7 @@ Every change starts in `SKILL.md` (unless it only concerns docs or the example) 
 - The ID prefixes
 - The core rules, the change procedure and the advisor patterns (summarised in the README)
 - The implementation prompt set (PR-00, PR-01, PR-02, PR-03…n, PR-last)
-- Install instructions and the skill folder name
+- Install instructions and the skill folder name (also `skills` in `.claude-plugin/plugin.json`; the plugin descriptions follow the SKILL.md `description`)
 
 ### What must stay in sync in the example and the images
 - IDs, values and wording in `examples/lendloop/` must match each other (see its README, "Follow one feature end to end")

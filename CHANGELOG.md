@@ -17,5 +17,6 @@ major for changes to phases, document hierarchy or ID scheme; minor for new aspe
 - Reverse analysis mode for projects already under way: reconnaissance, as-is model with provenance, AS- findings, As-is report, pre-filled phases and change prompts.
 - Change procedure with an explicit coherence check before writing, conflicts raised to the user, and "loop until stable" when a discovery flows up during the cascade; animated in the README.
 - Recommended way of working: voice for decisions, chat for review, Claude Code for reverse analysis and implementation.
+- Install from GitHub: the repository is a plugin marketplace (`.claude-plugin/`), for the Claude apps and Claude Code.
 - Hero image explaining the name (deliverables as the footings below ground), also used as the GitHub social preview.
 - Worked example (LendLoop) with a clickable prototype, reverse analysis example (FitSlot), generated README images and walkthrough GIF.

@@ -406,9 +406,14 @@ In reverse mode the feature prompts become **change prompts**, with the current 
 
 ## Installation
 
-The skill is the folder [`app-footings/`](app-footings/), which contains `SKILL.md`.
+The skill is the folder [`app-footings/`](app-footings/), which contains `SKILL.md`. This repository is also a plugin marketplace, so you can install it straight from GitHub and receive updates.
 
-### Claude apps (web and desktop)
+### Claude apps (web and desktop), from GitHub
+
+1. In Claude, open **Customize → Plugins**, choose **Add → Add marketplace** and enter `martiro/AppFootings`.
+2. Install the **app-footings** plugin and make sure it is switched on.
+
+### Claude apps, from a zip
 
 1. Download `app-footings-<version>.zip` from the latest [release](../../releases). If you prefer to build it yourself, zip the folder so that `app-footings/` sits at the root of the archive:
    ```bash
@@ -421,7 +426,16 @@ Skills need code execution to be enabled. On Team and Enterprise plans an admin 
 
 ### Claude Code
 
-Copy the folder into your skills directory:
+Install it from GitHub as a plugin:
+
+```
+/plugin marketplace add martiro/AppFootings
+/plugin install app-footings@appfootings
+```
+
+The plugin tracks this repository: `/plugin marketplace update appfootings` brings in the latest version. The skill then runs as `/app-footings:app-footings`, or starts by itself when you describe an app to analyse.
+
+Or copy the folder into your skills directory:
 
 ```bash
 # available in all your projects
@@ -556,6 +570,7 @@ Yours. The skill is written in English, but it talks to you and writes its docum
 │   ├── make_images.py         # regenerates docs/images and the example prototype
 │   ├── package.sh             # builds dist/app-footings-<version>.zip
 │   └── install-local.sh       # installs the skill in Claude Code
+├── .claude-plugin/            # marketplace and plugin manifests (install from GitHub)
 ├── .claude/commands/          # /consistency-check and /release for maintainers
 ├── .github/workflows/         # release workflow (zip attached to each v* tag)
 ├── CLAUDE.md                  # maintainer guide for Claude Code
